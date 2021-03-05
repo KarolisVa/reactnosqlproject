@@ -1,0 +1,308 @@
+$backgroundColor: #2f7ae5;
+$mainColor: #2f7ae5;
+$fontColor: white;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  overflow: hidden;
+  background-color: $backgroundColor;
+
+  .svg2 {
+    width: 100%;
+    position: absolute;
+    left: 0%;
+    top: -2%;
+  }
+
+  .svg3 {
+    opacity: 0.3;
+    z-index: 9;
+    position: absolute;
+  }
+}
+
+header {
+  background-color: $backgroundColor;
+  width: 100%;
+  min-height: 116px;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    margin-top: 30px;
+    color: $fontColor;
+    font-size: 2.7rem;
+    z-index: 100;
+  }
+}
+
+.sortingBar {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0);
+  height: 5vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  button {
+    z-index: 20;
+    cursor: pointer;
+    background-color: $backgroundColor;
+    color: $fontColor;
+    width: 100px;
+    height: 30px;
+    outline: none;
+    border: 1px solid $mainColor;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px;
+  }
+}
+
+.output {
+  position: relative;
+  background-color: $backgroundColor;
+  min-height: 116px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  form {
+    z-index: 11;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    label {
+      font-size: 2.3rem;
+      color: $fontColor;
+    }
+    input {
+      font-size: 0.9rem;
+      color: $mainColor;
+      outline: none;
+      border: none;
+      height: 30px;
+    }
+
+    .submit {
+      background-color: white;
+      font-size: 1.4rem;
+      height: 30px;
+      width: 100px;
+    }
+  }
+  .outputBox {
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+      width: 5px;
+      height: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: linear-gradient(13deg, #2f7ae5 14%, #7daef3 64%);
+      border-radius: 6px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: linear-gradient(13deg, #c7ceff 14%, #f9d4ff 64%);
+    }
+    &::-webkit-scrollbar-track {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: inset 7px 10px 12px #f0f0f0;
+    }
+    z-index: 10;
+    background-color: white;
+    height: 410px;
+    width: 500px;
+    border-radius: 3px;
+    border: 7px solid $fontColor;
+    .box1 {
+      position: sticky;
+      min-height: 40px;
+      top: 0;
+      width: 100%;
+      height: 10%;
+      background-color: white;
+      border-bottom: 3px solid $mainColor;
+      display: grid;
+      grid-template-columns: 20% 60% 20%;
+      h3 {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $mainColor;
+      }
+    }
+
+    .box2 {
+      width: 100%;
+      border-top: 2px solid $mainColor;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .event {
+      width: 100%;
+      display: grid;
+      justify-content: center;
+      grid-template-columns: 20% 60% 20%;
+      border-bottom: 2px solid $mainColor;
+
+      h3 {
+        color: $mainColor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.svg {
+  position: absolute;
+  top: 82%;
+  left: 0%;
+}
+
+@media all and (max-width: 630px) {
+  .sortingBar {
+    width: 400px;
+    button {
+    }
+  }
+
+  .output {
+    form {
+      width: 380px;
+      label {
+      }
+      input {
+      }
+
+      .submit {
+      }
+    }
+    .outputBox {
+      width: 400px;
+      .box1 {
+        h3 {
+        }
+      }
+
+      .box2 {
+      }
+
+      .event {
+        h3 {
+          font-size: 1.1rem;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 430px) {
+  header {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  .sortingBar {
+    width: 300px;
+    button {
+    }
+  }
+
+  .output {
+    form {
+      width: 200px;
+      label {
+        font-size: 1.2rem;
+      }
+      input {
+        width: 80px;
+      }
+
+      .submit {
+        width: 50px;
+        height: 25px;
+        font-size: 0.9rem;
+      }
+    }
+    .outputBox {
+      height: 298px;
+      width: 300px;
+      .box1 {
+        h3 {
+        }
+      }
+
+      .box2 {
+      }
+
+      .event {
+        h3 {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 315px) {
+  header {
+    h1 {
+      font-size: 1.7rem;
+    }
+  }
+  .sortingBar {
+    width: 250px;
+    button {
+    }
+  }
+
+  .output {
+    form {
+      width: 200px;
+      label {
+        font-size: 1.2rem;
+      }
+      input {
+        width: 80px;
+      }
+
+      .submit {
+        width: 50px;
+        height: 25px;
+        font-size: 0.9rem;
+      }
+    }
+    .outputBox {
+      height: 298px;
+      width: 250px;
+      .box1 {
+        h3 {
+        }
+      }
+
+      .box2 {
+      }
+
+      .event {
+        h3 {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
